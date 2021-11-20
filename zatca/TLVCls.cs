@@ -34,7 +34,7 @@ namespace zatca.einvoicing
         private byte[] getBytes(int id, byte[] Value)
         {
             byte[] val = new byte[2 + Value.Length];
-            val[0] = (byte)1;
+            val[0] = (byte)id;
             val[1] = (byte)Value.Length;
             Value.CopyTo(val, 2);
             return val;
