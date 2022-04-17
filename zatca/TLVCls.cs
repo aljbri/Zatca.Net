@@ -1,4 +1,9 @@
-﻿using System;
+﻿/***
+ * This code was built according to the specifications provided by “Zakat, Tax and Customs Authority”
+ * URL： https://zatca.gov.sa/en/E-Invoicing/SystemsDevelopers/Documents/QRCodeCreation.pdf
+ */
+
+using System;
 using System.Text;
 using System.Drawing;
 using System.Collections.Generic;
@@ -21,7 +26,7 @@ namespace zatca.einvoicing
             this.Seller = Encoding.UTF8.GetBytes(Seller);
             this.VatNo = Encoding.UTF8.GetBytes(TaxNo);
 
-            this.dateTime = Encoding.UTF8.GetBytes(dateTime.ToString());
+            this.dateTime = Encoding.UTF8.GetBytes(dateTime.ToString("yyyy-MM-dd'T'HH:mm:ss'Z'"));
             this.Total = Encoding.UTF8.GetBytes(Total.ToString());
             this.Tax = Encoding.UTF8.GetBytes(Tax.ToString());
         }
